@@ -1,0 +1,675 @@
+:root{
+  --bg:#ffffff;
+  --text:#111;
+  --muted:#666;
+  --line:#e8e8e8;
+
+  --sidebarW: 260px;
+  --gap: 22px;
+
+  --font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+}
+
+a{ color: inherit; text-decoration:none; }
+hr{ border:0; border-top:1px solid var(--line); }
+
+.app{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns: var(--sidebarW) 1fr;
+}
+
+/* Sidebar */
+.sidebar{
+  border-right: 1px solid var(--line);
+  padding: 22px 18px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow:auto;
+  background: #002d89;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.logo{ display:flex; align-items:flex-start; }
+.logoImg{
+  width: 189px;
+  height: 229px;
+  object-fit: contain;
+  display:block;
+}
+
+.cartLine{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding: 10px 0 14px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 14px;
+}
+.muted{ color: var(--muted); }
+
+.navSectionTitle{
+  font-size: 13px;
+  letter-spacing: .04em;
+  margin: 10px 0 8px;
+}
+.navLink{
+  display:block;
+  padding: 8px 0;
+  font-size: 14px;
+}
+.navLink:hover{ text-decoration: underline; }
+.navDivider{ margin: 14px 0; }
+
+/* Main */
+.main{ padding: 18px 24px 48px; }
+
+/* Topbar (mobile) */
+.topbar{
+  display:none;
+  align-items:center;
+  gap:12px;
+  padding: 10px 0 18px;
+}
+.topbarTitle{ font-size: 14px; letter-spacing: .06em; }
+.topbarSpacer{ flex:1; }
+
+.iconBtn{
+  border:1px solid var(--line);
+  background:#fff;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor:pointer;
+}
+.iconBtn:hover{ border-color:#cfcfcf; }
+
+.mobileOnly{ display:none; }
+
+/* HERO */
+.hero{ margin: 0 0 22px; }
+.heroCanvas{
+  width:100%;
+  aspect-ratio: 16 / 7;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow:hidden;
+  position: relative;
+  background: #fafafa;
+}
+.heroImg{ width:100%; height:100%; object-fit: cover; display:block; }
+.heroImg[src=""]{ display:none; }
+
+.heroFallback{
+  position:absolute;
+  inset:0;
+  background: #ffaaa;
+}
+.heroFallbackText{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  font-size: clamp(28px, 6vw, 72px);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .9;
+  pointer-events:none;
+}
+
+/* Section */
+.sectionHeader{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom: 16px;
+}
+.sectionTitle{
+  margin: 3;
+  font-weight: 400;
+  letter-spacing: .12em;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+/* Products grid */
+.productsGrid{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--gap);
+}
+.productCard{
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
+.productMedia{
+  width:100%;
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow:hidden;
+  background:#fafafa;
+  position:relative;
+}
+
+.productMedia img{ width:100%; height:100%; object-fit: cover; display:block; }
+.productMedia img[src=""]{ display:none; }
+
+.mediaFallback{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(135deg, rgba(0,0,0,.05), rgba(0,0,0,0)),
+    repeating-linear-gradient(45deg, rgba(0,0,0,.04) 0 10px, rgba(0,0,0,.02) 10px 20px);
+}
+
+.productTitle{
+  margin:0;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  min-height: 3.2em;
+}
+
+.productMeta{ font-size: 12px; color: var(--text); }
+.productMeta.soldOut{ color: var(--muted); }
+
+/* Buy row */
+.buyRow{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.sizeSelect{
+  flex:1;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 10px;
+  background:#fff;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.buyBtn{
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background:#fff;
+  font-family: inherit;
+  font-size: 12px;
+  cursor:pointer;
+  white-space: nowrap;
+}
+.buyBtn:hover{ border-color:#cfcfcf; }
+
+/* Scroll reveal */
+.reveal{
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s ease, transform .6s ease;
+  will-change: transform, opacity;
+}
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.productCard.reveal{ transition-delay: var(--d, 0ms); }
+
+/* Overlay */
+.overlay{
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,.35);
+  z-index: 40;
+}
+.overlay[hidden]{ display:none !important; }
+
+/* Responsive */
+@media (max-width: 1200px){
+  .productsGrid{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 980px){
+  :root{ --sidebarW: 300px; }
+  .productsGrid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 720px){
+  .app{ grid-template-columns: 1fr; }
+
+  .sidebar{
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: min(86vw, var(--sidebarW));
+    transform: translateX(-110%);
+    transition: transform .22s ease;
+    z-index: 50;
+    box-shadow: 0 10px 40px rgba(0,0,0,.18);
+  }
+  .sidebar.open{ transform: translateX(0); }
+
+  .main{ padding: 12px 16px 40px; }
+  .topbar{
+    display:flex;
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background: var(--bg);
+  }
+  .mobileOnly{ display:inline-flex; }
+
+  .productsGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 420px){
+  .productsGrid{ grid-template-columns: 1fr; }
+}
+
+/* === BLUE SIDEBAR THEME (override) === */
+:root{
+  --sidebarBg: #002d89;      /* biru utama */
+  --sidebarBg2: #002d89;     /* biru hover */
+  --sidebarText: #ffffff;
+  --sidebarLine: rgba(255,255,255,.18);
+}
+
+.sidebar{
+  background: var(--sidebarBg);
+  border-right-color: var(--sidebarLine);
+}
+
+.cartLine{
+  border-bottom-color: var(--sidebarLine);
+}
+
+.muted{
+  color: rgba(255,255,255,.8);
+}
+
+.navSectionTitle{
+  color: rgba(255,255,255,.9);
+}
+
+.navLink{
+  color: var(--sidebarText);
+}
+
+.navLink:hover{
+  text-decoration: none;
+  background: var(--sidebarBg2);
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navDivider{
+  border-top-color: var(--sidebarLine);
+}
+
+.iconBtn{
+  border-color: var(--sidebarLine);
+}
+
+.iconBtn:hover{
+  border-color: rgba(255,255,255,.35);
+}
+
+/* opsional: biar logo keliatan di background biru */
+.logoImg{
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.25));
+}
+
+/* ===== Mobile drawer lebih rapih (header putih + body biru) ===== */
+@media (max-width: 720px){
+  /* Sidebar jadi 2 layer: header putih, bawahnya biru */
+  .sidebar{
+    padding: 0;                 /* biar kita atur padding per bagian */
+    background: var(--sidebarBg); /* tetap biru */
+  }
+
+  .brand{
+    background: #fff;
+    padding: 14px 14px 10px;
+    margin-bottom: 0;           /* hapus jarak bawah */
+    border-bottom: 1px solid rgba(255,255,255,.18);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  /* kecilin logo supaya ga makan tempat */
+  .logoImg{
+    width: 96px;
+    height: 120px;
+  }
+
+  /* area menu + cart kasih padding sendiri */
+  .cartLine,
+  .nav{
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .cartLine{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom-color: rgba(255,255,255,.18);
+  }
+
+  .nav{
+    padding-top: 10px;
+    padding-bottom: 16px;
+  }
+}
+
+@media (max-width: 720px){
+  /* Drawer */
+  .sidebar{
+    padding: 0;
+    background: var(--sidebarBg);
+    position: fixed; /* sudah ada di CSS kamu, ini untuk memastikan konsisten */
+  }
+
+  /* Panel putih di atas (tanpa ubah HTML) */
+  .sidebar::before{
+    content:"";
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 140px;              /* tinggi area putih (atur sesuai kebutuhan) */
+    background: #fff;
+    z-index: 0;
+  }
+
+  /* Pastikan konten sidebar berada di atas panel putih */
+  .sidebar > *{
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Brand ditaruh di area putih, rapihin padding */
+  .brand{
+    padding: 14px 14px 10px;
+    margin: 0;
+  }
+
+  /* Kecilkan logo agar gak kepotong */
+  .logoImg{
+    width: 88px;
+    height: 110px;
+  }
+
+  /* Menu tetap biru + padding */
+  .cartLine,
+  .nav{
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .cartLine{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom-color: rgba(255,255,255,.18);
+  }
+
+  .nav{
+    padding-top: 10px;
+    padding-bottom: 16px;
+  }
+
+  /* Tombol close biar jelas di putih */
+  #menuClose{
+    background: #fff;
+  }
+}
+
+@media (max-width: 720px){
+  /* Drawer */
+  .sidebar{
+    padding: 0;
+    background: var(--sidebarBg);
+    position: fixed; /* sudah ada di CSS kamu, ini untuk memastikan konsisten */
+  }
+
+  /* Panel putih di atas (tanpa ubah HTML) */
+  .sidebar::before{
+    content:"";
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 140px;              /* tinggi area putih (atur sesuai kebutuhan) */
+    background: #fff;
+    z-index: 0;
+  }
+
+  /* Pastikan konten sidebar berada di atas panel putih */
+  .sidebar > *{
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Brand ditaruh di area putih, rapihin padding */
+  .brand{
+    padding: 14px 14px 10px;
+    margin: 0;
+  }
+
+  /* Kecilkan logo agar gak kepotong */
+  .logoImg{
+    width: 88px;
+    height: 110px;
+  }
+
+  /* Menu tetap biru + padding */
+  .cartLine,
+  .nav{
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .cartLine{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom-color: rgba(255,255,255,.18);
+  }
+
+  .nav{
+    padding-top: 10px;
+    padding-bottom: 16px;
+  }
+
+  /* Tombol close biar jelas di putih */
+  #menuClose{
+    background: #fff;
+  }
+}
+
+/* ===== FORCE MOBILE SIDEBAR FULL BLUE + LOGO VISIBLE ===== */
+@media (max-width: 720px){
+  .sidebar{
+    background: var(--sidebarBg) !important;
+    padding: 22px 18px !important;
+  }
+
+  /* Matikan panel putih pseudo element yang bikin bagian atas putih */
+  .sidebar::before{
+    content: none !important;
+  }
+
+  /* Brand jangan putih */
+  .brand{
+    background: transparent !important;
+    border-bottom: 0 !important;
+    margin-bottom: 14px !important;
+    padding: 0 !important;
+    position: static !important;
+  }
+
+  /* Biar logo jelas di biru */
+  .logoImg{
+    width: 140px !important;
+    height: 180px !important;
+    filter: drop-shadow(0 10px 22px rgba(0,0,0,.35)) !important;
+  }
+
+  /* Tombol close biar kontras di biru */
+  #menuClose{
+    background: rgba(255,255,255,.12) !important;
+    border-color: rgba(255,255,255,.35) !important;
+    color: #fff !important;
+  }
+}
+
+@media (max-width: 720px){
+  body.sidebar-active .topbar{
+    display: none;
+  }
+}
+
+.searchBox{ margin: 10px 0 12px; }
+.searchInput{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+}
+.searchInput::placeholder{ color: rgba(255,255,255,.75); }
+
+.filterLink.active{
+  background: rgba(255,255,255,.12);
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* ===== FIX: jangan nutupin gambar produk ===== */
+
+/* pastikan gambar di atas fallback */
+.productMedia img{
+  position: relative;
+  z-index: 2;
+}
+
+/* fallback di bawah gambar */
+.mediaFallback{
+  z-index: 1;
+}
+
+/* kalau gambar ada (src tidak kosong), sembunyikan fallback */
+.productMedia img:not([src=""]):not([src]) ~ .mediaFallback{
+  display: none;
+}
+
+/* background putih untuk kotak produk */
+.productMedia{
+  background: #fff !important;
+}
+
+/* ===== KEYCHAIN SLIDER FINAL (override) ===== */
+
+/* jangan tampilkan fallback di dalam slider (biar gak nutupin gambar) */
+.productMedia.productSlider .mediaFallback{
+  display: none !important;
+}
+
+/* area slider */
+.productMedia.productSlider{
+  position: relative;
+  background: #fff !important;
+}
+
+/* container geser */
+.productMedia.productSlider .slides{
+  height: 100%;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.productMedia.productSlider .slides::-webkit-scrollbar{ display:none; }
+
+/* 1 slide = 1 layar */
+.productMedia.productSlider .slide{
+  flex: 0 0 100%;
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+/* IMPORTANT: contain biar keychain gak kepotong */
+.productMedia.productSlider .slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ini yang bikin gambar full */
+  background: #fff;
+  display: block;
+}
+
+/* dots */
+.productMedia.productSlider .dots{
+  position: absolute;
+  left: 0; right: 0; bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  z-index: 5;
+}
+
+.productMedia.productSlider .dot{
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.25);
+  background: rgba(255,255,255,.85);
+  padding: 0;
+  cursor: pointer;
+}
+
+.productMedia.productSlider .dot.active{
+  background: #111;
+  border-color: #111;
+}
+
+/* price + order sejajar untuk item tanpa size */
+.noSizeRow{
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* biar tombol gak full width di desktop untuk no-size */
+@media (min-width: 721px){
+  .noSizeRow .buyBtn{ width: auto; }
+}
+
+/* kalau di mobile kamu masih mau full width, biarin aturan mobile kamu tetap jalan */
+@media (max-width: 720px){
+  .noSizeRow{
+    flex-wrap: nowrap; /* tetap 1 baris */
+  }
+  .noSizeRow .buyBtn{
+    width: auto;       /* override biar nggak full */
+  }
+}
+
