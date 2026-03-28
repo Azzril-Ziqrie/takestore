@@ -675,4 +675,44 @@ hr{ border:0; border-top:1px solid var(--line); }
     width: auto;       /* override biar nggak full */
   }
 }
+/* ===== SALE PRICE STYLE ===== */
 
+.oldPrice{
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 6px;
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.newPrice{
+  color: #e60023;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* biar jarak lebih enak dilihat */
+.productMeta{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* OPTIONAL: badge sale kecil */
+.productCard::after{
+  content: "SALE";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e60023;
+  color: #fff;
+  font-size: 10px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  letter-spacing: .05em;
+}
+
+/* penting: supaya badge nempel di card */
+.productCard{
+  position: relative;
+}
