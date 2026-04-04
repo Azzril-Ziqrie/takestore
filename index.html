@@ -116,7 +116,7 @@
         </div>
       </section>
 
-      <!-- CANVAS (AMAN) -->
+      <!-- CANVAS -->
       <section class="section" id="canvas">
         <h2 class="sectionTitle">CANVAS</h2>
 
@@ -134,7 +134,7 @@
         </div>
       </section>
 
-      <!-- KEYCHAIN (AMAN) -->
+      <!-- KEYCHAIN -->
       <section class="section" id="keychain">
         <h2 class="sectionTitle">KEYCHAIN</h2>
 
@@ -174,5 +174,37 @@
 
     </main>
   </div>
+
+  <script>
+    const nomorWA = "62895324360400";
+
+    document.querySelectorAll(".buyBtn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const card = btn.closest(".productCard");
+        const namaBarang = card.querySelector(".productTitle")?.innerText?.trim() || "Produk";
+        const harga = btn.dataset.price || "";
+        const sizeSelect = card.querySelector(".sizeSelect");
+
+        let pesan = `Halo, saya mau pesan barang ini:\n`;
+        pesan += `Nama barang: ${namaBarang}\n`;
+
+        if (harga) {
+          pesan += `Harga: ${harga}\n`;
+        }
+
+        if (sizeSelect) {
+          const size = sizeSelect.value;
+          if (size === "Choose size") {
+            alert("Pilih size dulu ya.");
+            return;
+          }
+          pesan += `Size: ${size}\n`;
+        }
+
+        const urlWA = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+        window.location.href = urlWA;
+      });
+    });
+  </script>
 </body>
 </html>
