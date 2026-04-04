@@ -181,21 +181,21 @@
     document.querySelectorAll(".buyBtn").forEach((btn) => {
       btn.addEventListener("click", () => {
         const card = btn.closest(".productCard");
-        const namaBarang = card.querySelector(".productTitle")?.innerText?.trim() || "Produk";
+        const namaBarang = card.querySelector(".productTitle")?.innerText?.trim() || "Product";
         const harga = btn.dataset.price || "";
         const sizeSelect = card.querySelector(".sizeSelect");
 
-        let pesan = `Halo, saya mau pesan barang ini:\n`;
-        pesan += `Nama barang: ${namaBarang}\n`;
+        let pesan = `Hello, I would like to order this item:\n`;
+        pesan += `Item name: ${namaBarang}\n`;
 
         if (harga) {
-          pesan += `Harga: ${harga}\n`;
+          pesan += `Price: ${harga}\n`;
         }
 
         if (sizeSelect) {
           const size = sizeSelect.value;
           if (size === "Choose size") {
-            alert("Pilih size dulu ya.");
+            alert("Please select a size first.");
             return;
           }
           pesan += `Size: ${size}\n`;
