@@ -5,6 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Take Store</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .soldBadge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #d40000;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 999px;
+      z-index: 2;
+      letter-spacing: 0.5px;
+    }
+
+    .productMedia {
+      position: relative;
+    }
+
+    .buyBtn.soldOut {
+      background: #999 !important;
+      cursor: not-allowed;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .productCard.soldProduct {
+      opacity: 0.85;
+    }
+  </style>
 </head>
 
 <body>
@@ -155,8 +185,9 @@
             </div>
           </article>
 
-          <article class="productCard">
+          <article class="productCard soldProduct">
             <div class="productMedia productSlider">
+              <span class="soldBadge">SOLD OUT</span>
               <div class="slides">
                 <div class="slide"><img src="images/KC CN1.webp"></div>
                 <div class="slide"><img src="images/KC CN1 2.webp"></div>
@@ -165,7 +196,7 @@
             <h3 class="productTitle">KEYCHAIN CNONE</h3>
             <div class="buyRow noSizeRow">
               <div class="productMeta">Rp.30.000</div>
-              <button class="buyBtn" data-price="Rp.30.000">Order</button>
+              <button class="buyBtn soldOut" disabled>SOLD OUT</button>
             </div>
           </article>
 
@@ -180,6 +211,8 @@
 
     document.querySelectorAll(".buyBtn").forEach((btn) => {
       btn.addEventListener("click", () => {
+        if (btn.classList.contains("soldOut") || btn.disabled) return;
+
         const card = btn.closest(".productCard");
         const namaBarang = card.querySelector(".productTitle")?.innerText?.trim() || "Product";
         const harga = btn.dataset.price || "";
