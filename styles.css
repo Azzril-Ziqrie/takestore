@@ -698,19 +698,6 @@ hr{ border:0; border-top:1px solid var(--line); }
   gap: 6px;
 }
 
-/* OPTIONAL: badge sale kecil */
-.productCard::after{
-  content: "SALE";
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #e60023;
-  color: #fff;
-  font-size: 10px;
-  padding: 4px 6px;
-  border-radius: 6px;
-  letter-spacing: .05em;
-}
 
 /* penting: supaya badge nempel di card */
 .productCard{
