@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -21,198 +20,190 @@
       letter-spacing: 0.5px;
     }
 
-```
-.productMedia {
-  position: relative;
-}
+    .productMedia {
+      position: relative;
+    }
 
-.buyBtn.soldOut {
-  background: #999 !important;
-  cursor: not-allowed;
-  opacity: 0.8;
-  pointer-events: none;
-}
+    .buyBtn.soldOut {
+      background: #999 !important;
+      cursor: not-allowed;
+      opacity: 0.8;
+      pointer-events: none;
+    }
 
-.productCard.soldProduct {
-  opacity: 0.85;
-}
-```
-
+    .productCard.soldProduct {
+      opacity: 0.85;
+    }
   </style>
 </head>
 
 <body>
   <div class="app">
 
-```
-<!-- Sidebar -->
-<aside class="sidebar" id="sidebar">
-  <div class="brand">
-    <img class="logoImg" src="IMG_6340_logo_transparent.png" />
-  </div>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <img class="logoImg" src="IMG_6340_logo_transparent.png" />
+      </div>
 
-  <nav class="nav">
-    <a class="navLink" href="#tshirts">T-shirts</a>
-    <a class="navLink" href="#canvas">Canvas</a>
-    <a class="navLink" href="#keychain">Keychain</a>
-  </nav>
-</aside>
+      <nav class="nav">
+        <a class="navLink" href="#tshirts">T-shirts</a>
+        <a class="navLink" href="#canvas">Canvas</a>
+        <a class="navLink" href="#keychain">Keychain</a>
+      </nav>
+    </aside>
 
-<!-- Main -->
-<main class="main">
+    <!-- Main -->
+    <main class="main">
 
-  <!-- HERO -->
-  <section class="hero">
-    <img class="heroImg" src="cover.jpeg" />
-  </section>
+      <!-- HERO -->
+      <section class="hero">
+        <img class="heroImg" src="cover.jpeg" />
+      </section>
 
-  <!-- T-SHIRTS (DISKON) -->
-  <section class="section" id="tshirts">
-    <h2 class="sectionTitle">T-SHIRTS</h2>
+      <!-- T-SHIRTS (DISKON) -->
+      <section class="section" id="tshirts">
+        <h2 class="sectionTitle">T-SHIRTS</h2>
 
-    <div class="productsGrid">
+        <div class="productsGrid">
 
-      <!-- 1 -->
-      <article class="productCard">
-        <div class="productMedia">
-          <img src="images/BREAKDOWN TAKE BLACK TEE.webp">
+          <!-- 1 -->
+          <article class="productCard">
+            <div class="productMedia">
+              <img src="images/BREAKDOWN TAKE BLACK TEE.webp">
+            </div>
+            <h3 class="productTitle">BREAKDOWN TAKE BLACK TEE</h3>
+            <div class="productMeta">
+              <span class="oldPrice">Rp.180.000</span>
+              <span class="newPrice">Rp.150.000</span>
+            </div>
+            <div class="buyRow">
+              <select class="sizeSelect">
+                <option selected>Choose size</option>
+                <option>S</option><option>M</option><option>L</option><option>XL</option>
+              </select>
+              <button class="buyBtn" data-price="Rp.150.000">Order</button>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="productCard">
+            <div class="productMedia">
+              <img src="images/BREAKDOWN TAKE NAVY TEE.webp">
+            </div>
+            <h3 class="productTitle">BREAKDOWN TAKE NAVY TEE</h3>
+            <div class="productMeta">
+              <span class="oldPrice">Rp.180.000</span>
+              <span class="newPrice">Rp.150.000</span>
+            </div>
+            <div class="buyRow">
+              <select class="sizeSelect">
+                <option selected>Choose size</option>
+                <option>S</option><option>M</option><option>L</option><option>XL</option>
+              </select>
+              <button class="buyBtn" data-price="Rp.150.000">Order</button>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="productCard">
+            <div class="productMedia">
+              <img src="images/TAKE OVER THE WORLD BLACK TEE.webp">
+            </div>
+            <h3 class="productTitle">TAKE OVER THE WORLD BLACK TEE</h3>
+            <div class="productMeta">
+              <span class="oldPrice">Rp.180.000</span>
+              <span class="newPrice">Rp.150.000</span>
+            </div>
+            <div class="buyRow">
+              <select class="sizeSelect">
+                <option selected>Choose size</option>
+                <option>S</option><option>M</option><option>L</option><option>XL</option>
+              </select>
+              <button class="buyBtn" data-price="Rp.150.000">Order</button>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="productCard">
+            <div class="productMedia">
+              <img src="images/TAKE OVER THE WORLD NAVY TEE.webp">
+            </div>
+            <h3 class="productTitle">TAKE OVER THE WORLD NAVY TEE</h3>
+            <div class="productMeta">
+              <span class="oldPrice">Rp.180.000</span>
+              <span class="newPrice">Rp.150.000</span>
+            </div>
+            <div class="buyRow">
+              <select class="sizeSelect">
+                <option selected>Choose size</option>
+                <option>S</option><option>M</option><option>L</option><option>XL</option>
+              </select>
+              <button class="buyBtn" data-price="Rp.150.000">Order</button>
+            </div>
+          </article>
+
         </div>
-        <h3 class="productTitle">BREAKDOWN TAKE BLACK TEE</h3>
-        <div class="productMeta">
-          <span class="oldPrice">Rp.180.000</span>
-          <span class="newPrice">Rp.150.000</span>
-        </div>
-        <div class="buyRow">
-          <select class="sizeSelect">
-            <option selected>Choose size</option>
-            <option>S</option><option>M</option><option>L</option><option>XL</option>
-          </select>
-          <button class="buyBtn" data-price="Rp.150.000">Order</button>
-        </div>
-      </article>
+      </section>
 
-      <!-- 2 -->
-      <article class="productCard">
-        <div class="productMedia">
-          <img src="images/BREAKDOWN TAKE NAVY TEE.webp">
-        </div>
-        <h3 class="productTitle">BREAKDOWN TAKE NAVY TEE</h3>
-        <div class="productMeta">
-          <span class="oldPrice">Rp.180.000</span>
-          <span class="newPrice">Rp.150.000</span>
-        </div>
-        <div class="buyRow">
-          <select class="sizeSelect">
-            <option selected>Choose size</option>
-            <option>S</option><option>M</option><option>L</option><option>XL</option>
-          </select>
-          <button class="buyBtn" data-price="Rp.150.000">Order</button>
-        </div>
-      </article>
+      <!-- CANVAS -->
+      <section class="section" id="canvas">
+        <h2 class="sectionTitle">CANVAS</h2>
 
-      <!-- 3 -->
-      <article class="productCard soldProduct">
-        <div class="productMedia">
-          <span class="soldBadge">SOLD OUT</span>
-          <img src="images/TAKE OVER THE WORLD BLACK TEE.webp">
+        <div class="productsGrid">
+          <article class="productCard">
+            <div class="productMedia">
+              <img src="images/CANVAS TAKE X CANDER STP SMH.webp">
+            </div>
+            <h3 class="productTitle">CANVAS TAKE X CANDER STP SMH</h3>
+            <div class="buyRow noSizeRow">
+              <div class="productMeta">Rp.150.000</div>
+              <button class="buyBtn" data-price="Rp.150.000">Order</button>
+            </div>
+          </article>
         </div>
-        <h3 class="productTitle">TAKE OVER THE WORLD BLACK TEE</h3>
-        <div class="productMeta">
-          <span class="oldPrice">Rp.180.000</span>
-          <span class="newPrice">Rp.150.000</span>
-        </div>
-        <div class="buyRow">
-          <select class="sizeSelect" disabled>
-            <option selected>Sold out</option>
-            <option>S</option><option>M</option><option>L</option><option>XL</option>
-          </select>
-          <button class="buyBtn soldOut" data-price="Rp.150.000" disabled>SOLD OUT</button>
-        </div>
-      </article>
+      </section>
 
-      <!-- 4 -->
-      <article class="productCard soldProduct">
-        <div class="productMedia">
-          <span class="soldBadge">SOLD OUT</span>
-          <img src="images/TAKE OVER THE WORLD NAVY TEE.webp">
+      <!-- KEYCHAIN -->
+      <section class="section" id="keychain">
+        <h2 class="sectionTitle">KEYCHAIN</h2>
+
+        <div class="productsGrid">
+
+          <article class="productCard">
+            <div class="productMedia productSlider">
+              <div class="slides">
+                <div class="slide"><img src="images/KC BAD.webp"></div>
+                <div class="slide"><img src="images/KC BRAK.webp"></div>
+                <div class="slide"><img src="images/KC BUREN.webp"></div>
+              </div>
+            </div>
+            <h3 class="productTitle">KEYCHAIN KARABINER</h3>
+            <div class="buyRow noSizeRow">
+              <div class="productMeta">Rp.50.000</div>
+              <button class="buyBtn" data-price="Rp.50.000">Order</button>
+            </div>
+          </article>
+
+          <article class="productCard soldProduct">
+            <div class="productMedia productSlider">
+              <span class="soldBadge">SOLD OUT</span>
+              <div class="slides">
+                <div class="slide"><img src="images/KC CN1.webp"></div>
+                <div class="slide"><img src="images/KC CN1 2.webp"></div>
+              </div>
+            </div>
+            <h3 class="productTitle">KEYCHAIN CNONE</h3>
+            <div class="buyRow noSizeRow">
+              <div class="productMeta">Rp.30.000</div>
+              <button class="buyBtn soldOut" disabled>SOLD OUT</button>
+            </div>
+          </article>
+
         </div>
-        <h3 class="productTitle">TAKE OVER THE WORLD NAVY TEE</h3>
-        <div class="productMeta">
-          <span class="oldPrice">Rp.180.000</span>
-          <span class="newPrice">Rp.150.000</span>
-        </div>
-        <div class="buyRow">
-          <select class="sizeSelect" disabled>
-            <option selected>Sold out</option>
-            <option>S</option><option>M</option><option>L</option><option>XL</option>
-          </select>
-          <button class="buyBtn soldOut" data-price="Rp.150.000" disabled>SOLD OUT</button>
-        </div>
-      </article>
+      </section>
 
-    </div>
-  </section>
-
-  <!-- CANVAS -->
-  <section class="section" id="canvas">
-    <h2 class="sectionTitle">CANVAS</h2>
-
-    <div class="productsGrid">
-      <article class="productCard">
-        <div class="productMedia">
-          <img src="images/CANVAS TAKE X CANDER STP SMH.webp">
-        </div>
-        <h3 class="productTitle">CANVAS TAKE X CANDER STP SMH</h3>
-        <div class="buyRow noSizeRow">
-          <div class="productMeta">Rp.150.000</div>
-          <button class="buyBtn" data-price="Rp.150.000">Order</button>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- KEYCHAIN -->
-  <section class="section" id="keychain">
-    <h2 class="sectionTitle">KEYCHAIN</h2>
-
-    <div class="productsGrid">
-
-      <article class="productCard">
-        <div class="productMedia productSlider">
-          <div class="slides">
-            <div class="slide"><img src="images/KC BAD.webp"></div>
-            <div class="slide"><img src="images/KC BRAK.webp"></div>
-            <div class="slide"><img src="images/KC BUREN.webp"></div>
-          </div>
-        </div>
-        <h3 class="productTitle">KEYCHAIN KARABINER</h3>
-        <div class="buyRow noSizeRow">
-          <div class="productMeta">Rp.50.000</div>
-          <button class="buyBtn" data-price="Rp.50.000">Order</button>
-        </div>
-      </article>
-
-      <article class="productCard soldProduct">
-        <div class="productMedia productSlider">
-          <span class="soldBadge">SOLD OUT</span>
-          <div class="slides">
-            <div class="slide"><img src="images/KC CN1.webp"></div>
-            <div class="slide"><img src="images/KC CN1 2.webp"></div>
-          </div>
-        </div>
-        <h3 class="productTitle">KEYCHAIN CNONE</h3>
-        <div class="buyRow noSizeRow">
-          <div class="productMeta">Rp.30.000</div>
-          <button class="buyBtn soldOut" disabled>SOLD OUT</button>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-</main>
-```
-
+    </main>
   </div>
 
   <script>
@@ -240,9 +231,7 @@
             alert("Please select a size first.");
             return;
           }
-          if (size !== "Sold out") {
-            pesan += `Size: ${size}\n`;
-          }
+          pesan += `Size: ${size}\n`;
         }
 
         const urlWA = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
@@ -250,6 +239,5 @@
       });
     });
   </script>
-
 </body>
 </html>
